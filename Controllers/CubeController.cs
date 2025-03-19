@@ -32,6 +32,11 @@ namespace RubiksCubeSimulator.Controllers
                     case "display":
                         view.DisplayCube(cube);
                         break;
+                    case "solve":
+                        view.DisplayMessage("Will execute the following sequence of commands to prove the cube is solved: F R' U B' L D'");
+                        ProcessMoves("F R' U B' L D'");
+                        view.DisplayCube(cube);
+                        break;
                     case "reset":
                         cube.Reset();
                         moveHistory.Clear();

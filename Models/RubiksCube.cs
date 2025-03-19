@@ -71,28 +71,8 @@ namespace RubiksCubeSimulator.Models
             command.Execute();
         }
 
-        public bool IsSolved()
-        {
-            // Check if all faces have the same color
-            return IsFaceSolved(up) && IsFaceSolved(front) && IsFaceSolved(left) &&
-                   IsFaceSolved(right) && IsFaceSolved(back) && IsFaceSolved(down);
-        }
 
-        private bool IsFaceSolved(char[,] face)
-        {
-            char color = face[0, 0];
-            for (int i = 0; i < 3; i++)
-            {
-                for (int j = 0; j < 3; j++)
-                {
-                    if (face[i, j] != color)
-                        return false;
-                }
-            }
-            return true;
-        }
-
-        internal void RotateFace(char[,] face, bool clockwise)
+        internal void RotateFace(char[,] face, bool clockwise = false)
         {
             char[,] temp = new char[3, 3];
             for (int i = 0; i < 3; i++)
@@ -522,5 +502,6 @@ namespace RubiksCubeSimulator.Models
                 }
             }
         }
+
     }
 }

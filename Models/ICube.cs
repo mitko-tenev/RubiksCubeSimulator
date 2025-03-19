@@ -7,6 +7,5 @@ namespace RubiksCubeSimulator.Models
         char[,] GetFace(CubeFace face);
         void ApplyMove(IMoveCommand command);
         void Reset();
-        bool IsSolved();
     }
 }
