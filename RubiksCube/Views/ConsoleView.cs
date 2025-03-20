@@ -80,6 +80,7 @@ namespace RubiksCubeSimulator.Views
             Console.WriteLine("Commands:");
             Console.WriteLine("  U, D, L, R, F, B (clockwise)");
             Console.WriteLine("  U', D', L', R', F', B' (counterclockwise)");
+            Console.WriteLine("  test - test the solution by executing the sequence: F R' U B' L D'");
             Console.WriteLine("  display - Show the cube");
             Console.WriteLine("  reset - Reset the cube to solved state");
             Console.WriteLine("  help - Display this help message");
