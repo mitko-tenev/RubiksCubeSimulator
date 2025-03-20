@@ -20,6 +20,15 @@ namespace RubiksCubeSimulator.Tests.Models
             Assert.Equal(expected, upFace);
         }
 
+        [Fact]
+        public void GetFace_Throws_For_Unknown_Face()
+        {
+            ArgumentException exception = Assert.Throws<ArgumentException>(() => this._sut.GetFace((CubeFace)34));
+
+            Assert.Equal("Invalid face", exception.Message);
+        }
+
+
         public static IEnumerable<object[]> Data =>
           new List<object[]>
           {

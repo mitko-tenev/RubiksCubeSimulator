@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RubiksCube\RubiksCubeSimulator.csproj" />
+    <ProjectReference Include="..\RubiksCubeSimulator\RubiksCubeSimulator.csproj" />
   </ItemGroup>
 
   <ItemGroup>
