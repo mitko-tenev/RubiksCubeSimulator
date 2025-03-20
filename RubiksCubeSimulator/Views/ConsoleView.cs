@@ -67,10 +67,10 @@ namespace RubiksCubeSimulator.Views
             Console.WriteLine(message);
         }
 
-        public string GetUserInput()
+        public string? GetUserInput()
         {
             Console.Write("\nEnter command: ");
-            return Console.ReadLine().Trim();
+            return Console.ReadLine()?.Trim();
         }
 
         public void DisplayHelp()

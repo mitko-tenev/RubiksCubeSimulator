@@ -11,7 +11,7 @@ namespace RubiksCubeSimulator.Views
     {
         void DisplayCube(ICube cube);
         void DisplayMessage(string message);
-        string GetUserInput();
+        string? GetUserInput();
         void DisplayHelp();
     }
 }

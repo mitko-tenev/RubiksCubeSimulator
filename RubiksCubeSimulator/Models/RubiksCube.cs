@@ -18,6 +18,14 @@ namespace RubiksCubeSimulator.Models
 
         public RubiksCube()
         {
+            // make sure arrays are always initialized
+            up = new char[3, 3];
+            front = new char[3, 3];
+            left = new char[3, 3];
+            right = new char[3, 3];
+            back = new char[3, 3];
+            down = new char[3, 3];
+
             Reset();
         }
 

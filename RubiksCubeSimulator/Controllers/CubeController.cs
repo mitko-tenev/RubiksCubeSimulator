@@ -25,7 +25,7 @@ namespace RubiksCubeSimulator.Controllers
             bool running = true;
             while (running)
             {
-                string input = view.GetUserInput();
+                string? input = view.GetUserInput() ?? throw new ArgumentNullException("Invalid input");
 
                 switch (input.ToLower())
                 {
