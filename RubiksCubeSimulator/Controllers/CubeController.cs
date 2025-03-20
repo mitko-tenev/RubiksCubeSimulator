@@ -1,4 +1,5 @@
 ﻿using RubiksCubeSimulator.Commands;
+using RubiksCubeSimulator.Factories;
 using RubiksCubeSimulator.Models;
 using RubiksCubeSimulator.Views;
 
@@ -8,12 +9,14 @@ namespace RubiksCubeSimulator.Controllers
     {
         private readonly ICube cube;
         private readonly ICubeView view;
+        private readonly ICommandFactory commandFactory;
         private readonly Stack<IMoveCommand> moveHistory;
 
-        public CubeController(ICube cube, ICubeView view)
+        public CubeController(ICube cube, ICubeView view, ICommandFactory commandFactory)
         {
             this.cube = cube;
             this.view = view;
+            this.commandFactory = commandFactory;
             this.moveHistory = new Stack<IMoveCommand>();
         }
 
@@ -90,7 +93,7 @@ namespace RubiksCubeSimulator.Controllers
                 {
                     try
                     {
-                        IMoveCommand command = CommandFactory.CreateCommand((RubiksCube)cube, move, clockwise);
+                        IMoveCommand command = this.commandFactory.CreateCommand(cube, move, clockwise);
                         commands.Add(command);
                     }
                     catch (ArgumentException ex)

@@ -15,8 +15,10 @@ namespace RubiksCubeConsole
             // Create the view
             ICubeView view = new ConsoleView();
 
+            ICommandFactory commandFactory = new CommandFactory();
+
             // Create the controller
-            CubeController controller = new CubeController(cube, view);
+            CubeController controller = new CubeController(cube, view, commandFactory);
 
             // Start the application
             controller.Run();
