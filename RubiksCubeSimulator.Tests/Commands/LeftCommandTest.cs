@@ -6,7 +6,7 @@ namespace RubiksCubeSimulator.Tests.Commands
 {
     public class LeftCommandTest
     {
-        private LeftCommand _sut;
+        private LeftCommand? _sut;
 
         [Theory]
         [MemberData(nameof(ClockwiseData))]

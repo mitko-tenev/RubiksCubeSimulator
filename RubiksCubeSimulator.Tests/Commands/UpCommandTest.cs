@@ -6,7 +6,7 @@ namespace RubiksCubeSimulator.Tests.Commands
 {
     public class UpCommandTest
     {
-        private UpCommand _sut;
+        private UpCommand? _sut;
 
         [Theory]
         [MemberData(nameof(ClockwiseData))]

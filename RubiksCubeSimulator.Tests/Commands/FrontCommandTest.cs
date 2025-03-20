@@ -6,7 +6,7 @@ namespace RubiksCubeSimulator.Tests.Commands
 {
     public class FrontCommandTest
     {
-        private FrontCommand _sut;
+        private FrontCommand? _sut;
 
         [Theory]
         [MemberData(nameof(ClockwiseData))]
