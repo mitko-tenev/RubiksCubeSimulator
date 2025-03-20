@@ -1,4 +1,6 @@
-﻿using RubiksCubeSimulator.Models;
+﻿using NSubstitute;
+using RubiksCubeSimulator.Commands;
+using RubiksCubeSimulator.Models;
 
 namespace RubiksCubeSimulator.Tests.Models
 {
@@ -9,6 +11,24 @@ namespace RubiksCubeSimulator.Tests.Models
         public RubiksCubeTest()
         {
             _sut = new RubiksCube();
+        }
+
+        [Fact]
+        public void Reset()
+        {
+            var upFaceValues = this._sut.GetFace(CubeFace.Up);
+            upFaceValues[0, 0] = 'A';
+            upFaceValues[0, 1] = 'B';
+            upFaceValues[0, 2] = 'C';
+
+            this._sut.Reset();
+
+            Assert.Equal(new char[3, 3]
+                {
+                    { 'W', 'W', 'W' },
+                    { 'W', 'W', 'W' },
+                    { 'W', 'W', 'W' }
+                }, this._sut.GetFace(CubeFace.Up));
         }
 
         [Theory]
@@ -28,6 +48,16 @@ namespace RubiksCubeSimulator.Tests.Models
             Assert.Equal("Invalid face", exception.Message);
         }
 
+        [Fact]
+        public void ApplyMove()
+        {
+            IMoveCommand commandSubstitute = Substitute.For<IMoveCommand>();
+
+            this._sut.ApplyMove(commandSubstitute);
+
+            // Verify Execute method was called
+            commandSubstitute.Received().Execute();
+        }
 
         public static IEnumerable<object[]> Data =>
           new List<object[]>
