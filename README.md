@@ -7,6 +7,7 @@ Website where the cube can be visualized: [https://rubiks-cube-solver.com/](http
 **Before running this project make sure to:**
 - download and install .NET 8 SDK (it can be downloaded from here for your OS: https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 - make sure `dotnet` is available in the PATH varible (check by running `dotnet` in a command prompt and verify you see the helper text):
+  
  ![image](https://github.com/user-attachments/assets/bac75ff9-da8d-4411-9d3c-b5ebf0ee35f4)
 
 ## To run the project
@@ -33,6 +34,7 @@ The project follows the MVC architecture and uses the Commands design patterns t
  - Models - contains the model and logic of the cube
  - Views - contains the view that writes to the console
  - Program.cs - this is the file that contains the main logic of the app when it is executed
+   
 The project also contains another assembly with unit tests.
 
 ## How to run the tests:
